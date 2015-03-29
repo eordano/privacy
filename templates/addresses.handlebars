@@ -1,0 +1,24 @@
+<h3>Addresses with unknown identity</h3>
+
+<ul>
+{{#each addresses}}
+  <li>
+    <h4>
+      <strong>
+        <a href="https://insight.bitpay.com/address/{{hash}}"> {{hash}} </a>
+      </strong>
+  {{#if expanded}}
+    </h4>
+    {{#if annotations}}: {{anotations}} {{/if}}
+    {{> transactionReport}}
+  </li>
+  {{else}}
+    <small>(not expanded)</small>
+    </h4>
+    <ul>
+      <li><a href="#" class="expand" data-address="{{hash}}">Expand</a></li>
+    </ul>
+  </li>
+  {{/if}}
+{{/each}}
+</ul>

@@ -1,0 +1,14 @@
+{{#if current}}
+  {{showAssociate current.name address}}
+  or
+{{/if}}
+to 
+<div style="display: inline">
+  <select style="display: inline">
+    <option>Select identity...</option>
+  {{#each other_ids}}
+    <option value="{{name}}">{{name}}</option>
+  {{/each}}
+  </select>
+  <a href="#" data-address="{{address}}" class="associate-select btn btn-default btn-sm">Apply</a>
+</div>

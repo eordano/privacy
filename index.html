@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <title>Bitcoin Privacy Tool - moonlabs.io</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Language" content="en-us">
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script type="text/javascript" src="js/lib/handlebars-v1.3.0.js"></script>
+
+  <script type="text/javascript" src="js/views.js"></script>
+  <script type="text/javascript" src="js/model.js"></script>
+  <script type="text/javascript" src="js/strategies.js"></script>
+  <script type="text/javascript" src="js/operations.js"></script>
+  <script type="text/javascript" src="js/controller.js"></script>
+
+</head>
+
+<body>
+  <div class="container">
+    <h1>Blockchain Privacy Explorer</h1>
+    <div class="row command-line-input">
+      <div class="col-md-12">
+        <input type="text" id="command_line"/>
+        <button type="submit" id="submit" class="btn btn-primary">Execute</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" id="help">
+        <h2>Help:</h2>
+        <ul>
+          <li><strong>address 1abcd...xyz</strong>: add address to the exploration domain.</li>
+          <li><strong>identity John</strong>: create identity 'John' and add it to the exploration domain.</li>
+          <li><strong>associate 1abcd...xyz to John</strong>: associate identity 'John' with the address 1abcd...xyz.</li>
+          <li><strong>expand 1abcd...xyz</strong>: expand information on address 1abcd...xyz with information from the blockchain.</li>
+          <li><strong>help</strong>: show this menu again.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div id="results" class="col-md-12"></div>
+    </div>
+    <div class="row">
+      <div id="log" class="col-md-12"></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+div.command-line-input {
+  margin: 15px;
+}
+
+#command_line {
+  margin-top: 15px;
+  font-size: 1.2em;
+  width: 85%;
+}
+
+#submit {
+  width: 10%;
+  margin-top: -3px;
+}
+
+#results {
+  background-color: #EEE;
+  margin: 12px;
+  padding: 15px;
+  padding-top: -10px;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+#log {
+  background-color: #CCC;
+  margin: 12px;
+  padding: 15px;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+}

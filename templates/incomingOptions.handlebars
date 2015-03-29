@@ -1,0 +1,8 @@
+<ul>
+  {{#if expanded}} {{else}}
+      <li><a href="#" class="expand" data-address="{{address}}">Expand</a></li>
+  {{/if}}
+  {{#if identity}} {{else}} <li>
+    Associate {{> listAssociations}}
+  </li> {{/if}}
+</ul>

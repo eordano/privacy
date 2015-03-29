@@ -1,0 +1,36 @@
+<ul>
+  {{#if expanded}} {{else}}
+      <li><a href="#" class="expand" data-address="{{address}}">Expand</a></li>
+  {{/if}}
+  {{#if identity}} {{else}} <li>
+    Associate {{> listAssociations}}
+  </li> {{/if}}
+  {{#if metadata.strategy.largeSpend}}
+  <li>Probably same owner as (due to {{showTx tx}})
+    {{#each metadata.strategy.largeSpend.addresses}} {{showAddr this}}, {{/each}}
+    (spent
+      {{printPercent metadata.strategy.largeSpend.percentage}}%
+        of
+      {{printSat metadata.strategy.largeSpend.total}}
+      here
+    )
+  <ul>
+    {{#each metadata.strategy.largeSpend.identities }}
+      <li>Associate {{showAssociate this ../address}} </li>
+    {{/each}}
+  </ul>
+  </li>
+  {{/if}}
+  {{#if metadata.strategy.sameAddressType}}
+  <li>
+    Probably same owner as
+   {{showAddr metadata.strategy.sameAddressType.address}} - same address type
+  <ul>
+    <li>Associate
+      {{showAssociate metadata.strategy.sameAddressType.identity address}}
+    </li>
+  </ul>
+  </li>
+
+  {{/if}}
+</ul>

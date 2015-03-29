@@ -1,0 +1,37 @@
+<h4>Incoming Transactions:</h5>
+<ul>
+{{#each incoming}}
+  {{#unless tx_metadata.strategy.coinjoinDetection.coinjoinProbable}}
+  <li>{{printSat satoshis}} from {{showAddr address}}
+    {{#if identity}} (<strong>{{identity}}</strong>) {{/if}}
+    through transaction {{showTx tx}} to {{showAddr linked}}
+    {{> incomingOptions}}
+  {{/unless}}
+{{/each}}
+<ul>
+{{#each incoming}}
+  {{#if tx_metadata.strategy.coinjoinDetection.coinjoinProbable}}
+    <li>Coinjoin: {{printSat satoshis}} from {{showAddr address}}</li>
+  {{/if}}
+{{/each}}
+</ul>
+</li>
+</ul>
+<h4>Outgoing Transactions:</h5>
+<ul>
+{{#each outgoing}}
+  {{#unless tx_metadata.strategy.coinjoinDetection.coinjoinProbable}}
+  <li>{{printSat satoshis}} to {{showAddr address}}
+    {{#if identity}} (<strong>{{identity}}</strong>) {{/if}}
+    through transaction {{showTx tx}} from {{showAddr linked}}
+      {{> outgoingOptions}}
+  </li>
+  {{/unless}}
+{{/each}}
+{{#each outgoing}}
+  {{#if tx_metadata.strategy.coinjoinDetection.coinjoinProbable}}
+    <li>Coinjoin: {{printSat satoshis}} from {{showAddr address}}</li>
+  {{/if}}
+{{/each}}
+</li>
+</ul>
